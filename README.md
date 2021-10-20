@@ -8,32 +8,28 @@ Upon final analysis of the data, it is clear that both math and reading scores f
 
 To remove all the questionable data in the dataframe, it was important to change all Thomas High School 9th grade math and reading scores from the present values to "not a number". Setting the values to zero would have left the students in the dataset with inaccurate scores of 0 as opposed to being completely removed from the calculation of percent passing and average score. To perform this, the following code was utilized to change all the relevant math and reading scores to "not a number"
 
-'''
-
-  student_data_df.loc[(student_data_df["school_name"]==("Thomas High School")) & (student_data_df["grade"]==("9th")),   ["reading_score"]] = np.nan
+```
+  student_data_df.loc[(student_data_df["school_name"]==("Thomas High School")) & (student_data_df["grade"]==("9th")),  ["reading_score"]] = np.nan
   student_data_df.loc[(student_data_df["school_name"]==("Thomas High School")) & (student_data_df["grade"]==("9th")), ["math_score"]] = np.nan
   #student_data_df.tail(10)
+```
 
-'''
-The resulting output is represented in this dataframe:
-![Thomas 9th Grade Scores Adjusted](resources/sc-res_replaced_nan.png)
+The resulting output is represented in this dataframe, with "NaN" replacing the relevant values:
+![Thomas 9th Grade Scores Adjusted](resources/scores_replaced_nan.png)
 
 ## Results
 - How is the district summary affected?
   - a
-
-- How is the school summary affected?
-  - 
-
+- How is the scool summary affected?
+  - ggg
 - How does replacing the ninth graders’ math and reading scores affect Thomas High School’s performance relative to the other schools?
   - b
-
 - How does replacing the ninth-grade scores affect the following:
    - Math and reading scores by grade
-    - c
+      - The changes to math and reading scores by grade are minimally affected by the removal of the Thomas 9th grade student scores, as no other high schools, or the score for the 10th-12th grades at Thomas high school would have changed. Future analysis that looks at grade-level scores agnostic of high school could provide additional insight into the impact of the untrustworthy grades from Thomas High School's 9th graders.
    - Scores by school spending
-    - d
+      - d
    - Scores by school size
-    - e
+      - e
    - Scores by school type
-    - f
+      - f
